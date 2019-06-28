@@ -136,7 +136,7 @@ class Cling(object):
 
     def __init__(self, root, **kw):
         """Just set the root and any other attribs passes via **kw."""
-        self.root = root
+        self.root = str(root)  # Allow pathlib.Path
         self.encoding = sys.getdefaultencoding()
 
         for k, v in kw.items():
